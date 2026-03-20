@@ -30,24 +30,29 @@ Permite gestionar órdenes (`Order`) usando **Entity Framework Core** y se docum
 ```bash
 git clone https://github.com/tuusuario/OrdersApi.git
 cd OrdersApi/OrdersApi
-
+```
 
 2. Restaurar paquetes NuGet
 ```bash
 dotnet restore
 dotnet build
+````
 
 3. Si quieres usar migraciones EF Core y crear la base de datos automáticamente:
+```bash
 dotnet tool install --global dotnet-ef
 dotnet ef database update
+```
 
 4. Ejecuta la API en un puerto fijo para desarrollo local:
 ```bash
 Ejecuta la API en un puerto fijo para desarrollo local:
+````
 
 5.dotnet run --urls "http://localhost:5000"
-```
+```bash
 http://localhost:5000/swagger/index.html
+````
 
 
 Desde Swagger puedes probar:
