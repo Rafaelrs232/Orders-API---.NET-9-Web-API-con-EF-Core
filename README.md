@@ -56,63 +56,47 @@ http://localhost:5000/swagger/index.html
 
 
 Desde Swagger puedes probar:
-
+```bash
 GET /api/orders → listar pedidos
-
 GET /api/orders/{id} → obtener un pedido por ID
-
 POST /api/orders → crear un nuevo pedido usando OrderDTO
-
+````
 
 Notas técnicas
-
+```bash
 Program.cs configura: Controllers (builder.Services.AddControllers()), Swagger (builder.Services.AddSwaggerGen()), EF Core (builder.Services.AddDbContext<AppDbContext>()) e inyección de dependencias (builder.Services.AddScoped<OrderService>()).
-
 OrderDTO: utilizado para recibir datos de la API y mantener el modelo de dominio seguro.
-
 Order: entidad principal usada por EF Core.
-
 La API está configurada para desarrollo local con HTTP; HTTPS puede habilitarse para producción.
-
+````
 
 Buenas prácticas
-
+```bash
 Separación de capas: Controllers, Services y Data (DbContext)
-
 Uso de DTOs para exponer solo lo necesario al cliente
-
 Documentación automática con Swagger
-
 Inyección de dependencias para servicios
-
+```
 
 
 Archivos importantes
-
+```bash
 Program.cs → configuración principal de la API
-
 Controllers/OrdersController.cs → endpoints de Orders
-
 Data/AppDbContext.cs → EF Core DbContext
-
 Services/OrderService.cs → lógica de negocio
-
 DTOs/OrderDTO.cs → objetos de transferencia de datos
-
 Models/Order.cs → entidad de dominio
-
 appsettings.json → cadena de conexión a SQL Server y configuración
-
+```
 
 
 Comandos útiles
-
+```bash
 Restaurar paquetes y compilar: dotnet restore && dotnet build
-
 Ejecutar: dotnet run --urls "http://localhost:5000"
-
 Migraciones EF Core: Crear migración: dotnet ef migrations add NombreMigracion, aplicar migración: dotnet ef database update
-
+```
 
 
 
